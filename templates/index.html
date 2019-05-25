@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Seller's Workplace</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col pt-5">
+      <h1>Seller's Workplace</h1>
+        <p>
+        <a href="{{ url_for('add') }}"><button type="button" class="btn btn-secondary">Add product</button></a>
+        </p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for product in products %}
+            <tr>
+              <th scope="row">{{ loop.index }}</th>
+              <td><a href="{{ url_for('details_by_id', id=product.id) }}">{{ product.name }}</a></td>
+              <td>{{ product.price }}</td>
+              <td>{{ product.qty }}</td>
+              <td><a href="{{ url_for('sale', id=product.id, count=count) }}"
+                     class="btn-btn-default"
+                     title="Sale" style="color: forestgreen"><i class="fas fa-cart-arrow-down fa-2x"></i></a></td>
+              <td><a href="{{ url_for('edit', id=product.id) }}"
+                     class="btn-btn-default"
+                     title="Edit"><i style="color: indigo" class="far fa-edit fa-2x"></i></a></td>
+              <td><a href="{{ url_for('remove', id=product.id) }}"
+                     class="btn-btn-default"
+                     title="Remove"><i style="color: crimson" class="far fa-trash-alt fa-2x"></i></a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

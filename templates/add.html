@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add product</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col pt-5">
+            <h1>Add product</h1>
+            <form action="{{ url_for('add') }}" method="post">
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="name"><b>Name</b></label>
+                  <input name="name" type="text" class="form-control" id="name" placeholder="Enter name" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="price"><b>Price</b></label>
+                  <input name="price" type="text" class="form-control" id="price" placeholder="Enter price" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="qty"><b>Quantity</b></label>
+                  <input name="qty" type="text" class="form-control" id="qty" placeholder="Enter quantity" required>
+                </div>
+              </div>
+              <button class="btn btn-secondary">Save</button>
+            </form>
+            <a href="{{ url_for('index') }}"><button style="margin-top: 10px" type="button"
+                                                     class="btn btn-outline-primary">Home page</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

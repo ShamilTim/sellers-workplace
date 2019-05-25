@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col pt-5">
+            <h1>Details</h1>
+                <div class="row-md-6 mb-3">
+                  <h4><b>Name: </b>{{ product.name }}</h4>
+                </div>
+                <div class="row-md-3 mb-3">
+                  <h4><b>Price: </b>{{ product.price }}</h4>
+                </div>
+                <div class="row-md-3 mb-3">
+                  <h4><b>Quantity: </b>{{ product.qty }}</h4>
+                </div>
+            <a href="{{ url_for('edit_form', id=product.id) }}"><button type="button" class="btn btn-secondary">Edit</button></a>
+            <a href="{{ url_for('remove_form', id=product.id) }}"><button type="button" class="btn btn-secondary">Delete</button></a>
+            <div><a href="{{ url_for('index') }}"><button style="margin-top: 10px" type="button"
+                             class="btn btn-outline-primary">Home page</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
