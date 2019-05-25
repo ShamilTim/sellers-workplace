@@ -1,30 +1,30 @@
-def open_db():
+def test_open_db():
     pass
 
 
-def init_db():
+def test_init_db():
     pass
 
 
-def get_products():
+def test_get_products():
     pass
 
 
-def add():
+def test_add():
     pass
 
 
-def get_by_id():
+def test_get_by_id():
     pass
 
 
-def update():
+def test_update():
     pass
 
 
-def remove():
+def test_remove():
     pass
 
 
-def sale():
+def test_sale():
     pass
