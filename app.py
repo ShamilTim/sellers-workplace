@@ -1,7 +1,8 @@
 import waitress
 from flask import Flask, render_template, request, redirect, url_for
 
-import db, os
+import db
+import os
 from domain import Product
 
 
@@ -21,7 +22,7 @@ def start():
     @app.route("/add", methods=['POST'])
     def add():
         name = request.form['name']
-        price = int(request.form['price'])
+        price = float(request.form['price'])
         qty = int(request.form['qty'])
         product = Product(0, name, price, qty)
         db.add(db.open_db(db_url), product)
@@ -40,7 +41,7 @@ def start():
     @app.route("/edit/<id>", methods=['POST'])
     def edit(id):
         name = request.form['name']
-        price = int(request.form['price'])
+        price = float(request.form['price'])
         qty = int(request.form['qty'])
         product = Product(id, name, price, qty)
         db.update(db.open_db(db_url), product)
