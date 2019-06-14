@@ -1,9 +1,9 @@
 import waitress
 from flask import Flask, render_template, request, redirect, url_for
 
-import db
+from app import db
 import os
-from domain import Product
+from app.domain import Product
 
 
 def start():

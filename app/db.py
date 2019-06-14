@@ -1,6 +1,6 @@
 import sqlite3
 
-from domain import Product
+from app.domain import Product
 
 
 def open_db(url):
